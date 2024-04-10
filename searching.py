@@ -16,6 +16,16 @@ def read_data(file_name, field):
     with open(file_path, mode="r") as json_file:
         data = json.load(json_file)
 
+def linear_search(sekvence,cislo):
+    slovnik = []
+    count = 0
+    for i in sekvence:
+        if i == cislo:
+            slovnik.append(sekvence[i])
+            count += 1
+        else:
+            continue
+    return (slovnik, count)
 
 def main():
     data1 = read_data("sequential.json","unordered_numbers")
@@ -23,3 +33,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    cislo = 10
