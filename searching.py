@@ -17,15 +17,26 @@ def read_data(file_name, field):
         data = json.load(json_file)
 
 def linear_search(sekvence,cislo):
-    slovnik = []
+    """
+    slovnik = [] # reseults{"positions":[],"count":0}, results["positions"].appent(i)
     count = 0
-    for i in sekvence:
-        if i == cislo:
+    for i in range(len(sekvence)):
+        if sekvence[i] == cislo:
             slovnik.append(sekvence[i])
             count += 1
         else:
             continue
     return (slovnik, count)
+    """
+    results ={"positions": [], "count": 0}
+
+    for i in range(len(sekvence)):
+        if sekvence[i] == cislo:
+            results["positions"].append(i)
+            results["count"] += 1
+        else:
+            continue
+    return results
 
 def main():
     data1 = read_data("sequential.json","unordered_numbers")
